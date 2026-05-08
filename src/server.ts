@@ -14,6 +14,7 @@ app.get("/api/health", (req: Request, res: Response) => {
 
 // Future solver endpoints will be mounted here
 
-app.listen(PORT, () => {
-  console.log(`Backend server is running on http://localhost:${PORT}`);
+const port = parseInt(process.env.PORT || "3000", 10);
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Backend server is running on port ${port}`);
 });
